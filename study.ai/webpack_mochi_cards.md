@@ -6,7 +6,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-Webpack 是一个现代 JavaScript 应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个依赖图，此依赖图对应映射到项目所需的每个模块，然后生成一个或多个 bundle。
+Webpack 是一个现代 JavaScript 应用程序的{{静态模块打包工具}}。当 webpack 处理应用程序时，它会在内部构建一个{{依赖图}}，此依赖图对应映射到项目所需的每个{{模块}}，然后生成一个或多个 {{bundle}}。
 
 > [!NOTE]
 > 费曼式解释：想象你有很多散落的乐高积木（JavaScript 文件、CSS、图片等），每个积木都有特定的用途。Webpack 就像一个助手，它知道哪些积木需要连接在一起，并按照你的指示将它们组装成一个完整的玩具（打包后的应用）。它不仅仅是简单地把积木堆在一起，还会按照正确的顺序和结构组装，确保最终的玩具能够正常工作。
@@ -29,7 +29,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-在 Webpack 中，依赖图是指从入口点开始，webpack 递归地构建一个包含应用程序所需的每个模块的关系图。每当一个文件依赖于另一个文件时，webpack 都会将此视为依赖关系，并根据这些依赖关系构建出完整的模块关系网络。
+在 Webpack 中，依赖图是指从{{入口点}}开始，webpack {{递归地}}构建一个包含应用程序所需的每个{{模块}}的关系图。每当一个文件依赖于另一个文件时，webpack 都会将此视为{{依赖关系}}，并根据这些依赖关系构建出完整的模块关系网络。
 
 > [!NOTE]
 > 费曼式解释：想象一个家族树，显示了谁是谁的父母、兄弟姐妹等。依赖图就像是你的代码文件的"家族树"。如果文件 A 需要使用文件 B 中的某些内容，那么文件 A 就"依赖于"文件 B。Webpack 会查看你的"主文件"（入口点），然后找出它依赖的所有文件，再找出这些文件依赖的所有文件，以此类推，直到构建出完整的"家族树"。
@@ -52,7 +52,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-Bundle（包）是由多个不同的模块生成，它是已经加载完毕和编译处理后的源代码的最终版本。与开发时编写的源码文件相比，bundle 文件是经过打包优化后的、可以直接在浏览器中运行的代码文件。
+Bundle（包）是由多个不同的{{模块}}生成，它是已经{{加载完毕}}和{{编译处理}}后的源代码的最终版本。与开发时编写的源码文件相比，bundle 文件是经过{{打包优化}}后的、可以直接在浏览器中运行的代码文件。
 
 > [!NOTE]
 > 费曼式解释：想象你写了一本书，由多个章节组成，每个章节保存在不同的文件中。Bundle 就像是将这些章节合并、编辑和优化后形成的最终出版物。读者（浏览器）不需要关心这本书最初是如何分散编写的，他们只需要阅读最终成型的完整作品。
@@ -65,7 +65,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-入口点指示 webpack 应该使用哪个模块来作为构建其内部依赖图的开始。webpack 会找出入口点直接或间接依赖的所有模块。
+入口点指示 webpack 应该使用哪个{{模块}}来作为构建其内部{{依赖图}}的开始。webpack 会找出入口点{{直接}}或{{间接}}依赖的所有模块。
 
 可以在 webpack 配置中指定一个或多个入口点：
 
@@ -86,7 +86,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-output 属性告诉 webpack 在哪里输出它所创建的 bundle，以及如何命名这些文件。主要输出文件的默认值是 `./dist/main.js`，其他生成文件默认放置在 `./dist` 文件夹中。
+output 属性告诉 webpack 在{{哪里}}输出它所创建的 bundle，以及如何{{命名}}这些文件。主要输出文件的默认值是 `{{./dist/main.js}}`，其他生成文件默认放置在 `{{./dist}}` 文件夹中。
 
 你可以在配置中指定输出配置：
 
@@ -113,9 +113,9 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Loader
 
 ---
 
-loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
+loader 让 webpack 能够去处理那些{{非 JavaScript 文件}}（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件{{转换}}为 webpack 能够处理的{{有效模块}}，然后你就可以利用 webpack 的打包能力，对它们进行处理。
 
-本质上，webpack loader 将所有类型的文件，转换为应用程序的依赖图可以直接引用的模块。
+本质上，webpack loader 将所有类型的文件，转换为应用程序的{{依赖图}}可以直接引用的模块。
 
 ```javascript
 module.exports = {
@@ -139,9 +139,9 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Plugin
 
 ---
 
-插件是 webpack 的支柱功能。webpack 自身也是构建于插件系统之上！插件目的在于解决 loader 无法实现的其他事。
+插件是 webpack 的{{支柱功能}}。webpack 自身也是构建于{{插件系统}}之上！插件目的在于解决 loader {{无法实现}}的其他事。
 
-webpack 插件是一个具有 `apply` 方法的 JavaScript 对象。`apply` 方法会被 webpack compiler 调用，并且在整个编译生命周期都可以访问 compiler 对象。
+webpack 插件是一个具有 `{{apply}}` 方法的 JavaScript 对象。`apply` 方法会被 webpack {{compiler}}调用，并且在整个{{编译生命周期}}都可以访问 compiler 对象。
 
 ```javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -166,7 +166,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Configuration
 
 ---
 
-通过选择 `development`, `production` 或 `none` 之中的一个，来设置 `mode` 参数，你可以启用 webpack 内置在相应环境下的优化。默认值为 `production`。
+通过选择 `{{development}}`, `{{production}}` 或 `{{none}}` 之中的一个，来设置 `mode` 参数，你可以启用 webpack 内置在相应环境下的优化。默认值为 `{{production}}`。
 
 ```javascript
 module.exports = {
@@ -176,9 +176,9 @@ module.exports = {
 
 不同模式的区别：
 
-- development：开启 NamedChunksPlugin 和 NamedModulesPlugin，方便调试
-- production：开启多种优化插件，如代码压缩、作用域提升等
-- none：不使用任何默认优化选项
+- development：开启 {{NamedChunksPlugin}} 和 {{NamedModulesPlugin}}，方便调试
+- production：开启多种{{优化插件}}，如代码压缩、作用域提升等
+- none：不使用任何默认{{优化选项}}
 
 > [!NOTE]
 > 费曼式解释：模式就像是汽车的驾驶模式。在"城市模式"（development）下，汽车会优先考虑灵活性和舒适性，便于在城市中频繁启停；而在"高速模式"（production）下，汽车会优先考虑速度和燃油效率，适合长距离高速行驶。webpack 的模式也是类似的概念，开发模式优先考虑开发体验，而生产模式优先考虑性能和用户体验。
@@ -191,17 +191,17 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-在模块化编程中，开发者将程序分解为功能离散的chunk（discrete chunks of functionality），并称之为模块。
+在模块化编程中，开发者将程序分解为功能{{离散}}的chunk（discrete chunks of functionality），并称之为模块。
 
-每个模块都拥有小于完整程序的体积，使得验证、调试及测试变得轻而易举。精心编写的模块提供了可靠的抽象和封装界限，使得应用程序中每个模块都具有条理清楚的设计和明确的目的。
+每个模块都拥有小于完整程序的{{体积}}，使得验证、调试及测试变得轻而易举。精心编写的模块提供了可靠的{{抽象}}和{{封装}}界限，使得应用程序中每个模块都具有条理清楚的设计和明确的目的。
 
 webpack 模块能够以各种方式表达它们的依赖关系：
 
-- ES2015 `import` 语句
-- CommonJS `require()` 语句
-- AMD `define` 和 `require` 语句
-- css/sass/less 文件中的 `@import` 语句
-- 样式（`url(...)`）或 HTML 文件（`<img src=...>`）中的图片链接
+- ES2015 `{{import}}` 语句
+- CommonJS `{{require()}}` 语句
+- AMD `{{define}}` 和 `{{require}}` 语句
+- css/sass/less 文件中的 `{{@import}}` 语句
+- 样式（`{{url(...)}}`)或 HTML 文件（`{{<img src=...>}}`)中的图片链接
 
 > [!NOTE]
 > 费曼式解释：模块就像是积木。每块积木都有特定的形状和功能，可以单独使用，也可以与其他积木组合构建更复杂的结构。在编程中，模块是具有特定功能的代码块，可以被导入到其他代码中重复使用。这种方式让我们可以把复杂的程序拆分成更小、更容易理解和维护的部分，就像用积木搭建复杂建筑一样。
@@ -214,7 +214,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Core
 
 ---
 
-热模块替换（HMR - Hot Module Replacement）是 webpack 提供的最有用的功能之一。它允许在运行时更新所有类型的模块，而无需完全刷新页面。
+热模块替换（HMR - Hot Module Replacement）是 webpack 提供的最有用的功能之一。它允许在{{运行时}}更新所有类型的模块，而无需{{完全刷新}}页面。
 
 启用 HMR：
 
@@ -252,13 +252,13 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Optimization
 
 ---
 
-代码分割是 webpack 中最引人注目的特性之一。此特性能够把代码分割成不同的包/块（bundle/chunk），然后可以按需加载或并行加载这些文件。代码分割可以用于获取更小的 bundle，以及控制资源加载优先级，如果使用合理，会极大影响加载时间。
+代码分割是 webpack 中最引人注目的特性之一。此特性能够把代码分割成不同的{{包/块}}（bundle/chunk），然后可以{{按需加载}}或{{并行加载}}这些文件。代码分割可以用于获取更小的 bundle，以及控制资源加载{{优先级}}，如果使用合理，会极大影响加载时间。
 
 有三种常用的代码分割方法：
 
-1. 入口起点：使用 `entry` 配置手动地分割代码
-2. 防止重复：使用 `SplitChunksPlugin` 去重和分离 chunk
-3. 动态导入：通过模块的内联函数调用来分割代码
+1. {{入口起点}}：使用 `entry` 配置手动地分割代码
+2. {{防止重复}}：使用 `SplitChunksPlugin` 去重和分离 chunk
+3. {{动态导入}}：通过模块的内联函数调用来分割代码
 
 ```javascript
 // 动态导入示例
@@ -278,7 +278,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Optimization
 
 ---
 
-Tree Shaking 是一个术语，通常用于描述移除 JavaScript 上下文中的未引用代码（dead-code）。它依赖于 ES2015 模块语法的静态结构特性，例如 `import` 和 `export`。
+Tree Shaking 是一个术语，通常用于描述移除 JavaScript 上下文中的{{未引用代码}}（dead-code）。它依赖于 ES2015 模块语法的{{静态结构}}特性，例如 `{{import}}` 和 `{{export}}`。
 
 在 webpack 中启用 Tree Shaking：
 
@@ -308,7 +308,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Loader
 
 ---
 
-babel-loader 是一个 webpack loader，它使用 Babel 转译 JavaScript 文件。这允许你使用最新的 JavaScript 语法，而不必担心浏览器兼容性问题。
+babel-loader 是一个 webpack loader，它使用 {{Babel}} 转译 JavaScript 文件。这允许你使用最新的 JavaScript {{语法}}，而不必担心浏览器{{兼容性}}问题。
 
 使用 babel-loader 的配置示例：
 
@@ -344,8 +344,8 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Loader
 
 这两个 loader 通常一起使用，用于处理 CSS 文件：
 
-- **css-loader**：解析 CSS 文件中的 `@import` 和 `url()` 等语法，并将 CSS 转换为 JavaScript 模块
-- **style-loader**：将 css-loader 处理后的 CSS 通过 `<style>` 标签插入到 HTML 页面中
+- **css-loader**：解析 CSS 文件中的 `{{@import}}` 和 `{{url()}}` 等语法，并将 CSS 转换为 JavaScript {{模块}}
+- **style-loader**：将 css-loader 处理后的 CSS 通过 `{{<style>}}` 标签插入到 HTML {{页面}}中
 
 配置示例：
 
@@ -365,7 +365,7 @@ module.exports = {
 };
 ```
 
-注意：loader 的执行顺序是从右到左（或从下到上），因此 css-loader 会先执行，然后将结果传给 style-loader。
+注意：loader 的执行顺序是从{{右到左}}（或从{{下到上}}），因此 css-loader 会先执行，然后将结果传给 style-loader。
 
 > [!NOTE]
 > 费曼式解释：想象你要把一张写满规则的纸（CSS 文件）放到公告板上（网页）。css-loader 就像是翻译官，它负责理解纸上所有的规则和引用，将其翻译成 JavaScript 能理解的格式。而 style-loader 则像是负责张贴的人，它把翻译好的规则实际贴到公告板上，让所有人都能看到并遵循这些规则。
@@ -380,9 +380,9 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Loader
 
 这些 loader 用于处理各种类型的文件：
 
-- **file-loader**：将文件输出到输出目录，并返回文件的 URL 路径
-- **url-loader**：与 file-loader 类似，但可以将小于指定大小的文件转换为 Data URL
-- **raw-loader**：将文件内容导入为字符串
+- **file-loader**：将文件{{输出}}到输出目录，并返回文件的 {{URL 路径}}
+- **url-loader**：与 file-loader 类似，但可以将小于指定{{大小}}的文件转换为 {{Data URL}}
+- **raw-loader**：将文件内容导入为{{字符串}}
 
 配置示例：
 
@@ -422,7 +422,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Plugin
 
 ---
 
-HtmlWebpackPlugin 简化了 HTML 文件的创建，为你的 webpack 包提供服务。这对于在文件名中包含哈希值的 webpack bundle 尤其有用，因为插件可以自动将生成的所有 bundle 注入到 HTML 文件中。
+HtmlWebpackPlugin {{简化}}了 HTML 文件的创建，为你的 webpack 包提供服务。这对于在文件名中包含{{哈希值}}的 webpack bundle 尤其有用，因为插件可以自动将生成的所有 bundle {{注入}}到 HTML 文件中。
 
 基本用法：
 
@@ -450,7 +450,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Core
 
 ---
 
-webpack-dev-server 提供了一个简单的 web 服务器，并且能够实时重新加载（live reloading）。它将打包后的文件保存在内存中，而不是写入磁盘，这使得开发过程中的变更能够快速反映出来。
+webpack-dev-server 提供了一个简单的 {{web 服务器}}，并且能够实时{{重新加载}}（live reloading）。它将打包后的文件保存在{{内存}}中，而不是写入磁盘，这使得开发过程中的变更能够{{快速反映}}出来。
 
 基本配置：
 
@@ -482,7 +482,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Plugin
 
 ---
 
-DefinePlugin 允许在编译时创建全局常量，这可能非常有用，尤其是在需要区分开发环境与生产环境时。
+DefinePlugin 允许在{{编译时}}创建全局{{常量}}，这可能非常有用，尤其是在需要区分{{开发环境}}与{{生产环境}}时。
 
 使用示例：
 
@@ -511,7 +511,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Plugin #Webpack/Opt
 
 ---
 
-SplitChunksPlugin 是 webpack 内置的一个插件，用于提取公共代码到单独的 chunk 中，避免在多个入口文件或动态导入的模块中重复的代码。
+SplitChunksPlugin 是 webpack 内置的一个插件，用于提取{{公共代码}}到单独的 {{chunk}} 中，避免在多个入口文件或动态导入的模块中{{重复}}的代码。
 
 基本配置：
 
@@ -548,7 +548,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Plugin
 
 ---
 
-MiniCssExtractPlugin 用于将 CSS 提取到单独的文件中。它为每个包含 CSS 的 JS 文件创建一个 CSS 文件，并且支持 CSS 和 SourceMaps 的按需加载。
+MiniCssExtractPlugin 用于将 CSS {{提取}}到单独的文件中。它为每个包含 CSS 的 JS 文件创建一个 CSS 文件，并且支持 CSS 和 {{SourceMaps}} 的按需加载。
 
 使用示例：
 
@@ -588,7 +588,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Optimization
 
 webpack 提供了多种缓存策略，通过改变输出文件的名称来利用浏览器的缓存机制，同时确保在文件内容变化时能够获取最新版本：
 
-1. **输出文件名使用哈希**：
+1. **输出文件名使用{{哈希}}**：
 
 ```javascript
 module.exports = {
@@ -599,7 +599,7 @@ module.exports = {
 };
 ```
 
-2. **提取第三方库**：
+2. **提取{{第三方库}}**：
 
 ```javascript
 module.exports = {
@@ -618,7 +618,7 @@ module.exports = {
 };
 ```
 
-3. **模块标识符**：
+3. **模块{{标识符}}**：
 
 ```javascript
 module.exports = {
@@ -639,9 +639,9 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Debugging
 
 ---
 
-source map 是一种将编译、打包、压缩后的代码映射回原始源代码的技术。通过 source map，可以在生产环境中调试源码，而不是调试那些转换后的代码。
+source map 是一种将{{编译}}、{{打包}}、{{压缩}}后的代码映射回{{原始源代码}}的技术。通过 source map，可以在生产环境中调试源码，而不是调试那些转换后的代码。
 
-在 webpack 中，可以通过 `devtool` 选项来控制 source map 的生成：
+在 webpack 中，可以通过 `{{devtool}}` 选项来控制 source map 的生成：
 
 ```javascript
 module.exports = {
@@ -653,11 +653,11 @@ module.exports = {
 
 不同的 devtool 选项会影响构建和重建速度，主要有以下几类：
 
-- eval：使用 eval 包裹模块代码，速度最快
-- source-map：产生 .map 文件，最详细的 source map
-- cheap：不包含列信息，也不包含 loader 的 source map
-- module：包含 loader 的 source map（例如 babel 编译前的代码）
-- inline：将 .map 作为 DataURL 嵌入
+- {{eval}}：使用 eval 包裹模块代码，速度最快
+- {{source-map}}：产生 .map 文件，最详细的 source map
+- {{cheap}}：不包含列信息，也不包含 loader 的 source map
+- {{module}}：包含 loader 的 source map（例如 babel 编译前的代码）
+- {{inline}}：将 .map 作为 DataURL 嵌入
 
 > [!NOTE]
 > 费曼式解释：想象你有一本精装书的电子版，为了节省空间，电子版把所有段落都压缩在一起，没有章节分隔和页码。source map 就像是一个索引表，它记录了压缩版本中的每个字符对应原书中的哪一页哪一段。当你在阅读电子版时发现一个错误，有了这个索引表，你就能立即找到这个错误在原书中的确切位置，而不必在一大堆压缩文本中查找。在网页开发中，这让你能够在浏览器中看到实际的源代码，即使浏览器加载的是压缩优化后的代码。
@@ -668,7 +668,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Configuration
 
 ---
 
-webpack 的配置文件是一个普通的 JavaScript 文件，它会导出一个包含 webpack 配置的对象。webpack 会根据这个对象定义的属性来执行构建过程。
+webpack 的配置文件是一个普通的 JavaScript {{文件}}，它会导出一个包含 webpack 配置的{{对象}}。webpack 会根据这个对象定义的{{属性}}来执行构建过程。
 
 基本的配置文件示例：
 
@@ -705,7 +705,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Configuration
 
 ---
 
-webpack 允许指定多个入口点，这对于构建多页面应用或将代码分割成多个块非常有用。
+webpack 允许指定{{多个}}入口点，这对于构建{{多页面应用}}或将代码分割成{{多个块}}非常有用。
 
 多入口配置示例：
 
@@ -735,16 +735,16 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Environment
 
 ---
 
-webpack 推荐为开发环境和生产环境创建不同的配置，以满足不同环境的需求：
+webpack 推荐为{{开发环境}}和{{生产环境}}创建不同的配置，以满足不同环境的需求：
 
-- **开发环境**：注重开发体验，包括 source maps、热更新等
-- **生产环境**：注重性能优化，包括代码压缩、分离等
+- **开发环境**：注重{{开发体验}}，包括 source maps、热更新等
+- **生产环境**：注重{{性能优化}}，包括代码压缩、分离等
 
 常见的实现方式是创建三个配置文件：
 
-1. `webpack.common.js`：公共配置
-2. `webpack.dev.js`：开发环境特定配置
-3. `webpack.prod.js`：生产环境特定配置
+1. `{{webpack.common.js}}`：公共配置
+2. `{{webpack.dev.js}}`：开发环境特定配置
+3. `{{webpack.prod.js}}`：生产环境特定配置
 
 然后使用 `webpack-merge` 合并配置：
 
@@ -784,13 +784,13 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Configuration
 
 ---
 
-webpack 使用 enhanced-resolve 来解析文件路径。模块解析是指 webpack 如何找到模块代码。当 import 或 require 一个模块时，webpack 需要找到这个模块对应的文件。
+webpack 使用 {{enhanced-resolve}} 来解析文件路径。模块解析是指 webpack 如何找到模块代码。当 import 或 require 一个模块时，webpack 需要找到这个模块对应的文件。
 
 webpack 的解析规则有三种：
 
-1. **绝对路径**：直接使用给定的路径，不需要进一步解析
-2. **相对路径**：相对于导入文件所在的目录进行解析
-3. **模块路径**：在 `resolve.modules` 中指定的目录内查找模块
+1. **{{绝对路径}}**：直接使用给定的路径，不需要进一步解析
+2. **{{相对路径}}**：相对于导入文件所在的目录进行解析
+3. **{{模块路径}}**：在 `resolve.modules` 中指定的目录内查找模块
 
 自定义解析行为：
 
@@ -819,9 +819,9 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Configuration
 
 ---
 
-externals 配置选项提供了不将某些 import 的包打包到 bundle 中的方式，而是在运行时再去从外部获取这些依赖。
+externals 配置选项提供了不将某些 import 的包{{打包}}到 bundle 中的方式，而是在{{运行时}}再去从{{外部}}获取这些依赖。
 
-常见场景是从 CDN 引入库文件：
+常见场景是从 {{CDN}} 引入库文件：
 
 ```javascript
 module.exports = {
@@ -846,13 +846,13 @@ module.exports = {
 
 ***
 
-## 什么是 webpack 的动态导入（Dynamic Imports）？
+## 什么是 webpack 的动态导入？
 
 Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Optimization
 
 ---
 
-webpack 支持 ES2020 的动态导入语法，使你可以在代码中动态地加载模块。这是实现代码分割的推荐方式之一。
+webpack 支持 {{ES2020}} 的动态导入语法，使你可以在代码中{{动态地}}加载模块。这是实现{{代码分割}}的推荐方式之一。
 
 示例：
 
@@ -871,7 +871,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-通过使用魔法注释 `webpackChunkName`，可以为生成的块指定名称。
+通过使用魔法注释 `{{webpackChunkName}}`，可以为生成的块指定名称。
 
 > [!NOTE]
 > 费曼式解释：想象你在使用一本厚重的百科全书。静态导入就像是在开始阅读前就把整本书都放在桌上，即使你可能只需要查阅其中几页。而动态导入则像是先把书放在书架上，只有当你真正需要某个章节时，才从书架上取下那个特定章节阅读。这种方式可以让你的开始阅读（初始加载）变得更快，因为你不需要一开始就搬动整本厚重的书，只有在真正需要时才获取相应的内容。
@@ -884,7 +884,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Optimization
 
 ---
 
-懒加载是一种优化网页或应用的方式，它能够帮助减少初始加载时间，只有在实际需要时才加载某些部分。webpack 的懒加载主要通过动态导入来实现。
+懒加载是一种优化网页或应用的方式，它能够帮助减少{{初始加载}}时间，只有在实际{{需要}}时才加载某些部分。webpack 的懒加载主要通过{{动态导入}}来实现。
 
 React 中的懒加载示例：
 
@@ -919,7 +919,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Optimization
 
 ---
 
-webpack 5 引入了持久化缓存功能，可以在磁盘上缓存生成的 webpack 模块和块，大大提高了构建速度。
+webpack 5 引入了持久化缓存功能，可以在{{磁盘}}上缓存生成的 webpack {{模块}}和{{块}}，大大提高了构建{{速度}}。
 
 启用持久化缓存：
 
@@ -945,7 +945,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Concept #Webpack/Integration
 
 ---
 
-模块联邦是 webpack 5 的一个新特性，它允许多个独立构建的应用共享代码。这使得微前端架构变得更加容易实现。
+模块联邦是 webpack 5 的一个新特性，它允许多个{{独立构建}}的应用{{共享}}代码。这使得{{微前端}}架构变得更加容易实现。
 
 基本配置示例：
 
@@ -1018,14 +1018,14 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Core
 
 ---
 
-webpack 5 引入了资产模块（Asset Modules），它是一种模块类型，允许使用资源文件（字体，图标等）而无需配置额外的 loader。
+webpack 5 引入了资产模块（Asset Modules），它是一种{{模块类型}}，允许使用资源文件（字体，图标等）而无需配置{{额外}}的 loader。
 
 资产模块类型：
 
-- `asset/resource` - 发送一个单独的文件并导出 URL（类似 file-loader）
-- `asset/inline` - 导出资源的 data URI（类似 url-loader）
-- `asset/source` - 导出资源的源代码（类似 raw-loader）
-- `asset` - 在导出单独文件和导出 data URI 之间自动选择（类似 url-loader 的 limit 配置）
+- `{{asset/resource}}` - 发送一个单独的文件并导出 URL（类似 file-loader）
+- `{{asset/inline}}` - 导出资源的 data URI（类似 url-loader）
+- `{{asset/source}}` - 导出资源的源代码（类似 raw-loader）
+- `{{asset}}` - 在导出单独文件和导出 data URI 之间自动选择（类似 url-loader 的 limit 配置）
 
 示例配置：
 
@@ -1072,13 +1072,13 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Core
 
 webpack 的工作原理可以概括为以下步骤：
 
-1. **初始化参数**：从配置文件和命令行参数中读取并合并参数，得到最终的配置对象
-2. **开始编译**：用上一步得到的配置初始化 Compiler 对象，加载所有配置的插件，执行 Compiler 对象的 run 方法开始编译
-3. **确定入口**：根据配置中的 entry 找出所有的入口文件
-4. **编译模块**：从入口文件出发，调用所有配置的 loader 对模块进行转换，再找出该模块依赖的模块，递归地进行编译处理
-5. **完成模块编译**：经过第 4 步使用 loader 转换完所有模块后，得到了每个模块被转换后的最终内容以及它们之间的依赖关系
-6. **输出资源**：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 chunk，再把每个 chunk 转换成一个单独的文件加入到输出列表
-7. **输出完成**：根据配置确定输出的路径和文件名，把文件内容写入到文件系统
+1. **{{初始化参数}}**：从配置文件和命令行参数中读取并合并参数，得到最终的配置对象
+2. **{{开始编译}}**：用上一步得到的配置初始化 Compiler 对象，加载所有配置的插件，执行 Compiler 对象的 run 方法开始编译
+3. **{{确定入口}}**：根据配置中的 entry 找出所有的入口文件
+4. **{{编译模块}}**：从入口文件出发，调用所有配置的 loader 对模块进行转换，再找出该模块依赖的模块，递归地进行编译处理
+5. **{{完成模块编译}}**：经过第 4 步使用 loader 转换完所有模块后，得到了每个模块被转换后的最终内容以及它们之间的依赖关系
+6. **{{输出资源}}**：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 chunk，再把每个 chunk 转换成一个单独的文件加入到输出列表
+7. **{{输出完成}}**：根据配置确定输出的路径和文件名，把文件内容写入到文件系统
 
 > [!NOTE]
 > 费曼式解释：想象 webpack 是一家工厂。首先，工厂管理员查看生产清单（配置文件），了解需要生产什么、如何生产。然后，工厂启动并装载所有必要的机器（插件）。接着，原材料（入口文件）被送入生产线。在生产线上，不同的专业工人（loader）对材料进行加工处理，并检查每种材料是否需要其他材料（依赖）。如果需要，这些新材料也会被送入生产线。当所有材料都加工完成后，工厂开始按照生产计划将这些处理过的材料组装成产品（chunk）。最后，包装好的产品被送到指定的仓库（输出目录）中，等待运输。这整个过程就是 webpack 如何将你的源代码转变为可部署的应用程序的工作原理。
@@ -1104,7 +1104,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Optimization
 
 提高 webpack 构建性能的常用策略包括：
 
-1. **减少 loader 作用范围**：
+1. **减少 loader {{作用范围}}**：
 
 ```javascript
 module.exports = {
@@ -1120,7 +1120,7 @@ module.exports = {
 };
 ```
 
-2. **使用 DllPlugin 分离第三方库**：
+2. **使用 {{DllPlugin}} 分离第三方库**：
 
 ```javascript
 // webpack.dll.config.js
@@ -1142,7 +1142,7 @@ module.exports = {
 };
 ```
 
-3. **使用 thread-loader 并行处理**：
+3. **使用 {{thread-loader}} 并行处理**：
 
 ```javascript
 module.exports = {
@@ -1160,7 +1160,7 @@ module.exports = {
 };
 ```
 
-4. **启用持久化缓存**：
+4. **启用{{持久化缓存}}**：
 
 ```javascript
 module.exports = {
@@ -1170,7 +1170,7 @@ module.exports = {
 };
 ```
 
-5. **优化解析配置**：
+5. **优化{{解析配置}}**：
 
 ```javascript
 module.exports = {
@@ -1194,7 +1194,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Optimization
 
 webpack 提供了多种优化最终打包结果运行性能的策略：
 
-1. **代码分割**：
+1. **{{代码分割}}**：
 
 ```javascript
 module.exports = {
@@ -1206,7 +1206,7 @@ module.exports = {
 };
 ```
 
-2. **懒加载**：
+2. **{{懒加载}}**：
 
 ```javascript
 // 点击按钮时才加载代码
@@ -1217,7 +1217,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-3. **Tree Shaking**：
+3. **{{Tree Shaking}}**：
 
 ```javascript
 // webpack.config.js
@@ -1234,7 +1234,7 @@ module.exports = {
 }
 ```
 
-4. **压缩代码**：
+4. **{{压缩代码}}**：
 
 ```javascript
 const TerserPlugin = require('terser-webpack-plugin');
@@ -1247,7 +1247,7 @@ module.exports = {
 };
 ```
 
-5. **预取/预加载模块**：
+5. **{{预取/预加载}}模块**：
 
 ```javascript
 // 预加载示例
@@ -1265,9 +1265,9 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Optimization
 
 ---
 
-webpack 可以通过特定的插件和 loader 来拆分和优化 CSS：
+webpack 可以通过特定的{{插件}}和 {{loader}} 来拆分和优化 CSS：
 
-1. **提取 CSS 到单独文件**：
+1. **提取 CSS 到{{单独文件}}**：
 
 ```javascript
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -1292,7 +1292,7 @@ module.exports = {
 };
 ```
 
-2. **压缩 CSS**：
+2. **{{压缩}} CSS**：
 
 ```javascript
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -1306,7 +1306,7 @@ module.exports = {
 };
 ```
 
-3. **CSS 模块化**：
+3. **CSS {{模块化}}**：
 
 ```javascript
 module.exports = {
@@ -1329,7 +1329,7 @@ module.exports = {
 };
 ```
 
-4. **PostCSS 优化**：
+4. **{{PostCSS}} 优化**：
 
 ```javascript
 module.exports = {
@@ -1371,7 +1371,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Core
 
 webpack 使用 enhanced-resolve 来解析模块路径，其主要查找规则如下：
 
-1. **绝对路径**：
+1. **{{绝对路径}}**：
 
    ```javascript
    import '/home/me/file';
@@ -1380,7 +1380,7 @@ webpack 使用 enhanced-resolve 来解析模块路径，其主要查找规则如
 
    直接使用给定的路径，不需要进一步解析。
 
-2. **相对路径**：
+2. **{{相对路径}}**：
 
    ```javascript
    import './file';
@@ -1389,20 +1389,20 @@ webpack 使用 enhanced-resolve 来解析模块路径，其主要查找规则如
 
    相对于导入文件所在的目录进行解析。
 
-3. **模块路径**：
+3. **{{模块路径}}**：
 
    ```javascript
    import 'module';
    import 'module/lib/file';
    ```
 
-   在配置的 `resolve.modules` 目录中查找，默认是 `['node_modules']`。查找过程会尝试以下路径：
+   在配置的 `resolve.modules` 目录中查找，默认是 `{{['node_modules']}}`。查找过程会尝试以下路径：
    - `/path/to/file` 的 `node_modules`
    - `/path/to` 的 `node_modules`
    - `/path` 的 `node_modules`
    - `/` 的 `node_modules`
 
-4. **resolve.alias 配置的路径别名**：
+4. **{{resolve.alias}} 配置的路径别名**：
 
    ```javascript
    // webpack.config.js
@@ -1418,7 +1418,7 @@ webpack 使用 enhanced-resolve 来解析模块路径，其主要查找规则如
    import '@/components/Button';
    ```
 
-5. **resolve.extensions 定义的文件扩展名**：
+5. **{{resolve.extensions}} 定义的文件扩展名**：
    如果文件没有指定扩展名，webpack 会按照 `resolve.extensions` 中定义的扩展名顺序查找文件。
 
 > [!NOTE]
@@ -1432,9 +1432,9 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Optimization
 
 ---
 
-DLL（动态链接库）功能可以将特定的第三方库提前打包，减少构建时间。这需要两步配置：
+DLL（动态链接库）功能可以将特定的{{第三方库}}提前打包，减少{{构建时间}}。这需要两步配置：
 
-1. **创建 DLL 文件**：
+1. **创建 DLL {{文件}}**：
 
 ```javascript
 // webpack.dll.config.js
@@ -1460,7 +1460,7 @@ module.exports = {
 };
 ```
 
-2. **在主配置文件中引用 DLL**：
+2. **在主配置文件中{{引用}} DLL**：
 
 ```javascript
 // webpack.config.js
@@ -1489,7 +1489,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Debugging
 
 可以采用以下几种方法来调试 webpack 的构建过程：
 
-1. **使用 stats 数据**：
+1. **使用 {{stats}} 数据**：
 
 ```javascript
 // webpack.config.js
@@ -1499,13 +1499,13 @@ module.exports = {
 };
 ```
 
-2. **使用 `--progress` 标志**：
+2. **使用 `{{--progress}}` 标志**：
 
 ```bash
 webpack --progress
 ```
 
-3. **使用 Node.js 调试器**：
+3. **使用 Node.js {{调试器}}**：
 
 ```javascript
 // 在 webpack 配置文件中添加调试点
@@ -1521,7 +1521,7 @@ module.exports = {
 node --inspect-brk ./node_modules/webpack/bin/webpack.js
 ```
 
-4. **分析构建产物**：
+4. **分析构建{{产物}}**：
 
 ```javascript
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -1533,7 +1533,7 @@ module.exports = {
 };
 ```
 
-5. **启用 profile**：
+5. **启用 {{profile}}**：
 
 ```bash
 webpack --profile --json > stats.json
@@ -1552,7 +1552,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Loader
 
 ---
 
-webpack loader 是一个导出为函数的 JavaScript 模块，它接收源文件内容作为参数，返回转换后的内容。
+webpack loader 是一个导出为{{函数}}的 JavaScript 模块，它接收源文件内容作为{{参数}}，返回转换后的内容。
 
 创建一个简单的 reverse-loader，用于反转源代码中的字符串：
 
@@ -1590,7 +1590,7 @@ module.exports = {
 };
 ```
 
-支持选项的 loader：
+支持{{选项}}的 loader：
 
 ```javascript
 // options-loader.js
@@ -1632,7 +1632,7 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Plugin
 
 ---
 
-webpack 插件是一个具有 `apply` 方法的 JavaScript 对象，该方法会在 webpack 初始化时被调用，并赋予对整个编译过程的访问权限。
+webpack 插件是一个具有 `{{apply}}` 方法的 JavaScript {{对象}}，该方法会在 webpack 初始化时被调用，并赋予对整个{{编译过程}}的访问权限。
 
 一个简单的文件列表插件示例：
 
@@ -1709,25 +1709,25 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Plugin
 
 ---
 
-webpack 使用 [tapable](https://github.com/webpack/tapable) 库提供了一套钩子（hooks）系统，这些钩子允许插件在 webpack 构建流程的特定时刻注入自定义行为。
+webpack 使用 [{{tapable}}](https://github.com/webpack/tapable) 库提供了一套钩子（hooks）系统，这些钩子允许插件在 webpack 构建流程的特定{{时刻}}注入自定义行为。
 
 主要钩子类型：
 
-- **SyncHook**：同步钩子，按照注册顺序依次执行
-- **SyncBailHook**：同步钩子，如果有插件返回非 undefined 值，则跳过剩余插件
-- **SyncWaterfallHook**：同步钩子，上一个插件的返回值作为下一个插件的参数
-- **SyncLoopHook**：同步钩子，如果插件返回非 undefined 值，则重新执行该插件
-- **AsyncParallelHook**：异步钩子，并行执行
-- **AsyncSeriesHook**：异步钩子，按照注册顺序依次执行
+- **{{SyncHook}}**：同步钩子，按照注册顺序依次执行
+- **{{SyncBailHook}}**：同步钩子，如果有插件返回非 undefined 值，则跳过剩余插件
+- **{{SyncWaterfallHook}}**：同步钩子，上一个插件的返回值作为下一个插件的参数
+- **{{SyncLoopHook}}**：同步钩子，如果插件返回非 undefined 值，则重新执行该插件
+- **{{AsyncParallelHook}}**：异步钩子，并行执行
+- **{{AsyncSeriesHook}}**：异步钩子，按照注册顺序依次执行
 
 常用的 compiler 钩子：
 
-- **entryOption**：在 webpack 配置中的 entry 被处理后调用
-- **afterPlugins**：设置插件之后调用
-- **compile**：在创建新的编译时调用
-- **make**：编译阶段开始时调用
-- **emit**：资源即将写入输出目录时调用
-- **done**：编译完成时调用
+- **{{entryOption}}**：在 webpack 配置中的 entry 被处理后调用
+- **{{afterPlugins}}**：设置插件之后调用
+- **{{compile}}**：在创建新的编译时调用
+- **{{make}}**：编译阶段开始时调用
+- **{{emit}}**：资源即将写入输出目录时调用
+- **{{done}}**：编译完成时调用
 
 示例：在构建结束后显示耗时信息的插件
 
@@ -1764,9 +1764,9 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Principle #Webpack/Optimization
 
 ---
 
-作用域提升（Scope Hoisting）是 webpack 的一个优化功能，它允许 webpack 将模块的作用域提升到一个更高的作用域，从而减少函数声明和间接调用，提高代码执行效率。
+作用域提升（Scope Hoisting）是 webpack 的一个优化功能，它允许 webpack 将模块的{{作用域}}提升到一个更高的作用域，从而减少{{函数声明}}和{{间接调用}}，提高代码{{执行效率}}。
 
-在 webpack 4+ 中，当 mode 设置为 'production' 时，作用域提升会自动启用。在 webpack 3 中，需要手动添加 ModuleConcatenationPlugin 插件：
+在 webpack 4+ 中，当 mode 设置为 '{{production}}' 时，作用域提升会自动启用。在 webpack 3 中，需要手动添加 {{ModuleConcatenationPlugin}} 插件：
 
 ```javascript
 const webpack = require('webpack');
@@ -1833,8 +1833,8 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Integration
 
 webpack 和 Babel 是两个不同的工具，但它们经常一起使用：
 
-- **webpack** 是一个模块打包工具，它将项目中的所有资源（JavaScript、CSS、图片等）视为模块，并将它们打包成浏览器可用的格式。
-- **Babel** 是一个 JavaScript 编译器，它可以将新版本的 JavaScript 代码转换为向后兼容的版本，以便在旧浏览器中运行。
+- **webpack** 是一个{{模块打包}}工具，它将项目中的所有资源（JavaScript、CSS、图片等）视为模块，并将它们打包成浏览器可用的格式。
+- **Babel** 是一个 JavaScript {{编译器}}，它可以将新版本的 JavaScript 代码转换为向后{{兼容}}的版本，以便在旧浏览器中运行。
 
 在 webpack 中集成 Babel：
 
@@ -1896,35 +1896,35 @@ Tags: #Webpack #Webpack/Advanced #Webpack/Usage #Webpack/Core
 
 从旧版本迁移到新版本的 webpack 通常需要考虑以下几个方面：
 
-1. **检查废弃的功能**：
+1. **检查{{废弃}}的功能**：
    查看新版本的更新日志，了解已经废弃或移除的功能，以及它们的替代方案。
 
-2. **更新依赖**：
+2. **更新{{依赖}}**：
 
 ```bash
 npm install webpack@latest webpack-cli@latest webpack-dev-server@latest --save-dev
 ```
 
-3. **更新 loader 和插件**：
+3. **更新 {{loader}} 和{{插件}}**：
 
 ```bash
 npm install style-loader@latest css-loader@latest babel-loader@latest --save-dev
 ```
 
-4. **调整配置**：
+4. **调整{{配置}}**：
    根据新版本的要求调整配置文件，例如从 webpack 4 迁移到 webpack 5 可能需要：
    - 移除 `optimization.moduleIds: 'hashed'` 改为 `moduleIds: 'deterministic'`
    - 添加 `output.ecmaVersion: 2015` 以支持现代浏览器
    - 更新缓存配置 `cache: { type: 'filesystem' }`
 
-5. **使用迁移工具**：
+5. **使用{{迁移工具}}**：
    一些版本更新提供了迁移工具，例如：
 
 ```bash
 npx webpack-cli migrate
 ```
 
-6. **逐步迁移**：
+6. **{{逐步}}迁移**：
    对于大型项目，可以考虑逐步迁移，先在非关键部分测试新版本的兼容性。
 
 示例：从 webpack 4 迁移到 webpack 5 的关键变化：
@@ -1972,7 +1972,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Usage #Webpack/Configuration
 
 webpack 本身不直接处理浏览器兼容性问题，但它可以与其他工具集成来解决这些问题：
 
-1. **使用 Babel 转译 JavaScript**：
+1. **使用 {{Babel}} 转译 JavaScript**：
 
 ```javascript
 module.exports = {
@@ -1999,7 +1999,7 @@ module.exports = {
 };
 ```
 
-2. **使用 Browserslist 指定目标浏览器**：
+2. **使用 {{Browserslist}} 指定目标浏览器**：
 
 ```
 // .browserslistrc
@@ -2008,7 +2008,7 @@ last 2 versions
 not dead
 ```
 
-3. **添加 Polyfills**：
+3. **添加 {{Polyfills}}**：
 
 ```javascript
 // 方法一：使用 @babel/preset-env 的 useBuiltIns 选项
@@ -2028,7 +2028,7 @@ import 'regenerator-runtime/runtime';
 }
 ```
 
-4. **使用 PostCSS 处理 CSS 兼容性**：
+4. **使用 {{PostCSS}} 处理 CSS 兼容性**：
 
 ```javascript
 module.exports = {
@@ -2069,7 +2069,7 @@ Tags: #Webpack #Webpack/Intermediate #Webpack/Concept #Webpack/Core
 
 webpack 5 相比 webpack 4 引入了许多重要的新特性：
 
-1. **持久化缓存**：
+1. **{{持久化缓存}}**：
 
 ```javascript
 module.exports = {
@@ -2082,7 +2082,7 @@ module.exports = {
 };
 ```
 
-2. **模块联邦（Module Federation）**：
+2. **{{模块联邦}}（Module Federation）**：
 
 ```javascript
 new ModuleFederationPlugin({
@@ -2093,7 +2093,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-3. **资产模块类型（Asset Modules）**：
+3. **{{资产模块}}类型（Asset Modules）**：
 
 ```javascript
 module.exports = {
@@ -2108,12 +2108,12 @@ module.exports = {
 };
 ```
 
-4. **更好的 Tree Shaking**：
-   - 支持嵌套的 Tree Shaking
-   - 内部模块的 Tree Shaking
-   - CommonJS Tree Shaking
+4. **更好的 {{Tree Shaking}}**：
+   - 支持{{嵌套}}的 Tree Shaking
+   - {{内部模块}}的 Tree Shaking
+   - {{CommonJS}} Tree Shaking
 
-5. **支持 Top Level Await**：
+5. **支持 {{Top Level Await}}**：
 
 ```javascript
 // 在模块顶层使用 await
@@ -2121,19 +2121,19 @@ const data = await fetch('https://api.example.com/data');
 export default data;
 ```
 
-6. **移除了一些过时的功能**：
-   - 移除 Node.js 核心模块的自动 polyfill
+6. **移除了一些{{过时}}的功能**：
+   - 移除 Node.js 核心模块的自动 {{polyfill}}
    - 移除 `optimization.hashedModuleIds` 选项
 
-7. **全新的 Web 平台功能**：
-   - JSON 模块
-   - import.meta 支持
-   - 原生 Worker 支持
+7. **全新的 {{Web 平台}}功能**：
+   - {{JSON}} 模块
+   - {{import.meta}} 支持
+   - 原生 {{Worker}} 支持
 
-8. **改进的代码生成**：
-   - 输出代码使用 ES2015 语法
-   - 更小的运行时代码
-   - 更少的模块封装
+8. **改进的{{代码生成}}**：
+   - 输出代码使用 {{ES2015}} 语法
+   - 更小的{{运行时}}代码
+   - 更少的模块{{封装}}
 
 > [!NOTE]
 > 费曼式解释：webpack 5 的升级就像是一辆汽车从 2018 款升级到 2021 款。表面上看起来可能差别不大，但内部有许多重要改进：新的发动机系统（持久化缓存）让车子启动更快；车子现在可以与其他品牌的车共享部件（模块联邦）；行李箱设计更合理（资产模块类型）；燃油效率大幅提升（更好的 Tree Shaking）；支持新的自动驾驶功能（Top Level Await）；移除了一些过时的功能如磁带播放器（移除过时功能）；增加了对新道路标准的兼容（Web 平台功能）；整体工程设计更加精简高效（改进的代码生成）。这些改进共同作用，使得新版本在保持熟悉操作体验的同时，提供了更高的性能和更广泛的功能。
