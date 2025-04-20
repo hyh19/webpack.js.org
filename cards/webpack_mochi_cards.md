@@ -344,8 +344,8 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Usage #Webpack/Loader
 
 这两个 loader 通常一起使用，用于处理 CSS 文件：
 
-- **css-loader**：解析 CSS 文件中的 `{{@import}}` 和 `{{url()}}` 等语法，并将 CSS 转换为 JavaScript {{模块}}
-- **style-loader**：将 css-loader 处理后的 CSS 通过 `{{<style>}}` 标签插入到 HTML {{页面}}中
+- **css-loader**：解析 CSS 文件中的 {{`@import`}} 和 {{`url()`}} 等语法，并将 CSS 转换为 JavaScript {{模块}}
+- **style-loader**：将 css-loader 处理后的 CSS 通过 {{`<style>`}} 标签插入到 HTML {{页面}}中
 
 配置示例：
 
