@@ -86,7 +86,7 @@ Tags: #Webpack #Webpack/Beginner #Webpack/Concept #Webpack/Core
 
 ---
 
-output 属性告诉 webpack 在{{哪里}}输出它所创建的 bundle，以及如何{{命名}}这些文件。主要输出文件的默认值是 `{{./dist/main.js}}`，其他生成文件默认放置在 `{{./dist}}` 文件夹中。
+output 属性告诉 webpack 在{{哪里}}输出它所创建的 bundle，以及如何{{命名}}这些文件。主要输出文件的默认值是 {{`./dist/main.js`}}，其他生成文件默认放置在 {{`./dist`}} 文件夹中。
 
 你可以在配置中指定输出配置：
 
