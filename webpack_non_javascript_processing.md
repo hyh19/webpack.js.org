@@ -63,6 +63,7 @@
    - 如果照片较大，说："这照片太大了，我给它一个特殊地址，需要时再去拿"
 
 5. **翻译官**最后写了一张"身份证"（JavaScript 模块）：
+
    ```javascript
    // 小照片的情况
    export default "data:image/jpeg;base64,/9j/4AAQSkZJRgA..."
@@ -74,6 +75,7 @@
 6. **文件侦探**拿到"身份证"松了口气："太好了！这是我熟悉的 JavaScript，现在我知道如何处理它了！"
 
 7. 当网页运行时，小明的代码 `<img src={catPic}>` 实际上变成了：
+
    ```html
    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgA...">
    <!-- 或 -->
@@ -135,6 +137,7 @@ function processNonJsFile(fileContent, filePath) {
 ### CSS 文件处理透视
 
 **原始 CSS 文件** (style.css):
+
 ```css
 .button {
   color: red;
@@ -148,6 +151,7 @@ function processNonJsFile(fileContent, filePath) {
 ```
 
 **第一步：css-loader 转换**
+
 ```javascript
 // css-loader 处理后的输出
 const cssModuleExports = require("../node_modules/css-loader/dist/runtime/api.js");
@@ -165,6 +169,7 @@ module.exports = cssWithMappings;
 ```
 
 **第二步：style-loader 转换**
+
 ```javascript
 // style-loader 处理后的最终模块
 import cssContent from "!!../node_modules/css-loader/dist/cjs.js!./style.css";
@@ -203,6 +208,7 @@ if (module.hot) {
 ```
 
 **当应用程序运行时**：
+
 1. 这段 JavaScript 代码被执行
 2. CSS 内容被注入到 `<style>` 标签
 3. 样式被应用到页面元素
@@ -210,6 +216,7 @@ if (module.hot) {
 ### 图片文件处理透视
 
 **原始代码**:
+
 ```javascript
 import catImage from './cat.jpg';
 
@@ -221,6 +228,7 @@ function createImage() {
 ```
 
 **file-loader 转换后**:
+
 ```javascript
 // 处理后的模块
 const imageUrl = __webpack_public_path__ + "assets/cat-5e7d9f.jpg";
@@ -230,10 +238,12 @@ export default imageUrl;
 ```
 
 **最终打包后生成两个文件**:
+
 1. JavaScript bundle 包含上述代码
 2. 图片文件在输出目录中: `assets/cat-5e7d9f.jpg`
 
 而对于 url-loader（小图片情况）:
+
 ```javascript
 // 对于小图片，url-loader 会将图片转为 base64
 const imageData = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..."
@@ -243,6 +253,7 @@ export default imageData;
 ```
 
 **当应用程序运行时**:
+
 1. `createImage()` 函数被调用
 2. 创建 `<img>` 元素并设置 `src` 为导入的 URL 或 base64 数据
 3. 图片正确显示在页面上
@@ -257,6 +268,7 @@ export default imageData;
 4. 如果你想让 SVG 直接以组件形式使用（而不是 URL），需要使用什么 loader？
 
 **检验你的理解**：
+
 - 正确答案应包含：Webpack 识别 SVG 文件 → 应用对应 loader → 转换为包含 URL 或内联内容的模块 → 集成到依赖图
 - `iconSrc` 内容可能是：URL 字符串或 base64 编码字符串
 - 修改 SVG 后，在开发模式下会触发重新编译，热更新系统会更新画面
@@ -283,15 +295,18 @@ export default imageData;
 ### 与其他工具的对比
 
 **Webpack vs Rollup**:
+
 - Rollup 更专注于 JavaScript 库打包，对非 JS 资源支持较简单
 - Webpack 提供更全面的资源处理能力和更丰富的生态系统
 
 **Webpack vs Vite**:
+
 - Vite 在开发模式下使用原生 ES 模块，减少了转换开销
 - Vite 生产构建仍使用 Rollup，专注于现代浏览器
 - Webpack 提供更广泛的兼容性和更成熟的生态系统
 
 **Webpack vs Parcel**:
+
 - Parcel 零配置，自动识别并处理各种资源
 - Webpack 提供更多自定义选项和精细控制
 
